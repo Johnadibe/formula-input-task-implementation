@@ -166,7 +166,7 @@ const FormulaInput: React.FC = () => {
         }
     };
 
-    const handleEditingKeyDown = (e: KeyboardEvent<HTMLInputElement>, index: number) => {
+    const handleEditingKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             e.preventDefault();
             finishEditing();
@@ -258,7 +258,7 @@ const FormulaInput: React.FC = () => {
                                         className="outline-none bg-transparent w-full"
                                         value={editingValue}
                                         onChange={(e) => setEditingValue(e.target.value)}
-                                        onKeyDown={(e) => handleEditingKeyDown(e, index)}
+                                        onKeyDown={(e) => handleEditingKeyDown(e)}
                                         onBlur={finishEditing}
                                     />
                                     <button
